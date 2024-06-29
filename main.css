@@ -15,6 +15,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    z-index: 2;
 }
 
 .hamburger {
@@ -57,6 +58,7 @@ section {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s, transform 1s;
+    position: relative;
 }
 
 #home {
@@ -68,7 +70,16 @@ section {
     margin-top: 20px;
 }
 
-.animate__animated {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes explosion {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0); }
+}
+
+.explosion {
+    animation: explosion 1s forwards;
 }
