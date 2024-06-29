@@ -15,8 +15,15 @@ $(document).ready(function() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate__fadeInUp');
-                observer.unobserve(entry.target);
+                entry.target.classList.add('section-visible');
+                entry.target.classList.remove('explosion');
+            } else {
+                if (entry.target.classList.contains('section-visible')) {
+                    entry.target.classList.add('explosion');
+                    setTimeout(() => {
+                        entry.target.classList.remove('section-visible');
+                    }, 1000);
+                }
             }
         });
     }, options);
