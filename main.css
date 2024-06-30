@@ -1,85 +1,48 @@
-/* styles/main.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    color: #333;
 }
 
 header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: #333;
-    color: white;
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 2;
+    justify-content: center;
+    padding: 0;
 }
 
-.hamburger {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 25px;
-    width: 30px;
+nav ul li {
+    margin: 0 1em;
 }
 
-.bar {
-    height: 3px;
-    width: 100%;
-    background: white;
-    transition: all 0.3s ease;
-}
-
-.nav-menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    background: #333;
-    z-index: 1;
-}
-
-.nav-menu a {
-    color: white;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
 }
 
 section {
-    padding: 80px 20px;
+    padding: 2em 0;
     text-align: center;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s, transform 1s;
-    position: relative;
 }
 
-#home {
-    background: #f8f8f8;
+h1, h2 {
+    color: #333;
 }
 
-#kommentare, #kontakte, #speisekarte {
-    background: #ececec;
-    margin-top: 20px;
-}
-
-.section-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@keyframes explosion {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0); }
-}
-
-.explosion {
-    animation: explosion 1s forwards;
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
