@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Esempio di aggiunta dinamica del menù
+    // Aggiunta dinamica del menù
     const menuItems = [
         { name: 'Pasta alla Carbonara', price: '12€' },
         { name: 'Pizza Margherita', price: '10€' },
@@ -26,6 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = document.createElement('img');
         img.src = src;
         img.alt = 'Galleria immagine';
+        img.className = 'gallery-image';
         galleryContainer.appendChild(img);
+    });
+
+    // Aggiunta animazioni alle immagini della galleria
+    const images = document.querySelectorAll('.gallery-image');
+    images.forEach(img => {
+        img.addEventListener('mouseover', () => {
+            img.style.transform = 'scale(1.1)';
+            img.style.transition = 'transform 0.3s ease-in-out';
+        });
+        img.addEventListener('mouseout', () => {
+            img.style.transform = 'scale(1)';
+        });
     });
 });
